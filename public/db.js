@@ -12,3 +12,16 @@ request.onupgradeneeded = (e) => {
 
   db.createObjectStore("BudgetStore", { autoIncrement: true });
 };
+
+request.onsuccess = (e) => {
+    db = e.target.result;
+    if(navigator.onLine){
+        checkDB(){
+            
+        }
+    }
+}
+
+request.onerror = (e) => {
+
+}
