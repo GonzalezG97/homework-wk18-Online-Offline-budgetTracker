@@ -56,3 +56,15 @@ const checkDB = () => {
     }
   };
 };
+
+const saveRecord = (record) => {
+    console.log('Saved record!');
+
+    const transaction = db.transaction(["BudgetStore"], 'readwrite');
+
+    const store = transaction.objectStore('BudgetStore');
+
+    store.add(record);
+}
+
+window.addEventListener('online', checkDB);
